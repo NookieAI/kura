@@ -1,5 +1,5 @@
 ![HFBK37taQAA3bGJ](https://github.com/user-attachments/assets/e03646e7-44d2-4594-8f07-1043bcc866f5)
-#Kura — PS3 / PS4 / PS5 Package Manager
+# Kura — PS3 / PS4 / PS5 Package Manager
 
 > Scan, organise, rename, and transfer your console game library. Local drives, USB, FTP, and direct console install — all in one app.
 
