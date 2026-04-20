@@ -2,7 +2,7 @@
 
 # Kura — PS3 / PS4 / PS5 Game Manager
 
-A fast, offline-first Electron desktop app for scanning, organising, and installing PS3, PS4, and PS5 games across local drives, network shares, and FTP consoles.
+A fast, offline-first Windows desktop app for scanning, organising, and installing PS3, PS4, and PS5 games across local drives, network shares, and FTP consoles.
 
 ---
 
