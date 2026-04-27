@@ -1,4 +1,4 @@
-<img width="1920" height="1020" alt="Screenshot 2026-04-20 124601" src="https://github.com/user-attachments/assets/53b17431-bed4-40a6-a6f1-5e237af49d4a" />
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/1d9eba45-8356-4985-9847-2062c4163c77" />
 
 # Kura — PS3 / PS4 / PS5 Game Manager
 
