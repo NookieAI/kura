@@ -79,4 +79,4 @@ The **Discord** button in the top-right of the app has the invite link.
 
 ---
 
-*Built by Nookie · PS3 · PS4 · PS5 · all from one window*
+*Built by Nookie · PSX · PS2 · PSP · PSV · PS3 · PS4 · PS5 · all from one window*
