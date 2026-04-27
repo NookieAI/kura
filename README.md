@@ -1,82 +1,138 @@
-<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/1d9eba45-8356-4985-9847-2062c4163c77" />
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/24f04d0c-22f4-4003-bdd8-c0ca6bafb6e2" />
 
-# Kura — One Tool for Your PlayStation Library
+# Kura
 
-## What is it?
+**Manage your PlayStation game library across PS1, PS2, PSP, PS3, PS4, PS5, and Vita — all from one place.**
 
-Kura is a free Windows app that scans your drives, identifies every PlayStation game you have, and helps you organise, transfer, and install them. It works across **PS1, PS2, PSP, PS3, PS4, PS5, and PS Vita** in one library.
-
-No installer. No login. No internet account. Just a portable `.exe`.
+A free, offline desktop app for Windows that scans your drives, organises your collection, and transfers games to consoles or back to your PC. No accounts, no subscriptions, no internet required for the core workflow.
 
 ---
 
-## Why people use it
+## Download & Run
 
-> *"It told me I had 47 duplicates I didn't know about."*
+Kura ships as a single portable `.exe` — no installer, no admin rights, no Node.js, nothing else needed.
 
-> *"First scanner that actually got my .cso files right — title, cover, version, all of it."*
+1. Download the latest `Kura.exe` from the Discord
+2. Double-click to run
+3. That's it
 
-> *"I switched my whole PS5 USB layout to etaHEN in two clicks."*
+The app stores its library and settings in `%APPDATA%\Kura\` so you can move the `.exe` anywhere without losing data. Delete that folder to fully reset Kura.
 
-### The pitch in one paragraph
-You have a folder of PlayStation games. Maybe it's on a USB stick, a network drive, your downloads folder, your console's FTP. Kura looks at all of them, figures out what each game actually is (not what the filename says), tells you which ones are duplicates of each other, lets you organise them onto whatever destination you need, and uploads them to your console with one click. It does this without phoning home, without an account, and without you having to know anything about title IDs or PARAM.SFO.
-
----
-
-## What's different about Kura
-
-### 🎯 It reads inside the files
-Most scanners look at filenames and guess. Kura cracks open the PKG header, the ISO9660 directory, the SFO metadata, the ZIP central directory, the CSO sector index — and pulls out the real title, title ID, version, content ID, region, firmware requirement, and cover art. That means **`[FF7-REMAKE-PS4-FREE-DOWNLOAD-FIXED-FIXED2.pkg]`** shows up in your library as **"Final Fantasy VII Remake"**.
-
-### 🧩 Every PlayStation, one library
-PS1 disc images, PS2 ECM dumps, PSP UMDs and CSOs, PS3 JB folders and PKGs, PS4 fpkg/exfat backups, PS5 folder installs, PS Vita VPKs and folder dumps — same library, same filters, same workflow. Sort by size and you'll see the 25 GB PS5 game right next to the 80 MB PS1 game.
-
-### 🚀 It scans fast
-The all-drives scanner runs every drive in parallel. Compressed formats use partial decompression — only the few sectors needed to read metadata, never the whole image. A 1.8 GB CSO scan takes the same wall-clock time as a regular ISO.
-
-### 🛡️ It's structural, not guesswork
-Kura doesn't classify games by filename. It uses the SFO TITLE_ID prefix, the PNG signature on icons, the BOOT line in SYSTEM.CNF — actual format-defined fields. That means a folder of screenshots named "BCES00004-lair-ps3-iso" doesn't get added as 685 fake PS3 games (that's a real bug we shipped a fix for).
-
-### 🎛️ Layouts for every console setup
-Itemzflow expects `GAMES/{Title} ({TitleID})/`. webMAN expects `GAMES/{Title}/PS3_GAME/`. etaHEN expects `games/{TitleID}/`. Dump Runner expects something else again. Kura has presets for all of them, plus a custom-rename builder if your setup is unusual.
-
-### 🔌 Direct console transfer
-Plug your console into the network. Kura transfers over FTP straight to `/data/`, `/user/app/`, or wherever you've configured. For PS5 it respects the PS5 FTP daemon's throttling so transfers don't stall. For PS3 webMAN it uses the proper HTTP install endpoint so games show up in the XMB without rebooting.
-
-### 📦 Bulletproof duplicate detection
-Same game across three drives? Different versions of the same patch? PS4 and PS5 versions of one title? Kura groups them by content ID + version + region and shows you side-by-side what's different. Decide what stays and what goes from one modal.
+> **Windows 10 or 11 (64-bit) recommended.** Older builds work but performance will suffer on the all-drives parallel scanner.
 
 ---
 
-## Who it's for
+## What Kura Does
 
-- People with PlayStation game collections on local storage that need organising
-- People who back up to USB sticks for jailbroken PS3/PS4/PS5 consoles
-- People with multiple console layouts (etaHEN + GoldHEN + Itemzflow)
-- People who want to see what they actually have before buying again
-- Anyone who's tired of spreadsheet-managing their game library
+### Scan
+Point Kura at any drive, folder, FTP console, or "All Drives" and it walks the tree finding games. It recognises PlayStation games on disc, in PKG containers, in folder dumps, and in compressed archives — including formats most other tools ignore.
 
-## Who it's not for
+### Organise
+Every game gets a real metadata-derived title (not the filename), the correct platform badge, region, firmware requirement, version, content ID, cover art, and DLC/patch grouping. The library lives in a single JSON file you can back up.
 
-- People looking for a place to **download** games — Kura doesn't do that
-- People who want a phone app — desktop only
-- macOS / Linux users — Windows only for now (Wine works but isn't tested)
+### Transfer
+Copy or move games between drives, to a USB stick formatted for PS4/PS5, or directly to a console over FTP. Layout presets cover all the popular custom-firmware setups (etaHEN, GoldHEN, ItemzFlow, webMAN, etc.).
 
----
-
-## Try it
-
-1. Grab the latest `Kura.exe` from the Discord
-2. Run it (no install)
-3. Click **All Drives** and let it scan
-4. Tell us what worked and what didn't
-
-The **Discord** button in the top-right of the app has the invite link.
+### Install
+On compatible consoles Kura can drive the install via FTP or HTTP, including the etaHEN / RPI / VoidShell / WebMAN install endpoints.
 
 ---
 
-*Kura is built and maintained by Nookie. No company, no investors, no plan to monetize. If you like it, tell a friend.*
+## Supported Formats
+
+| Platform | Formats |
+|---|---|
+| **PS1** | `.iso`, `.bin`/`.cue` (single + multi-track), `.img`, `.ecm`, `.chd` (header metadata), PSN `.pkg` |
+| **PS2** | `.iso`, `.bin`/`.cue`, `.img`, `.ecm`, `.chd` (header metadata), PSN `.pkg` |
+| **PSP** | `.pbp`, UMD `.iso`, `.cso` / `.ciso` (compressed), `.ziso` (LZ4-compressed), folder dumps |
+| **PS3** | `.pkg`, JB folder dumps (`BLES.../PS3_GAME/PARAM.SFO`), disc `.iso` |
+| **PS4** | `.pkg`, `.fpkg`, game-folder ZIPs, folder installs |
+| **PS5** | `.pkg`, `.exfat`, `.ffpkg`, folder installs (with `sce_sys/param.json`), game-folder ZIPs |
+| **PS Vita** | `.pkg`, `.vpk`, generic `.zip`, folder dumps (`PCSE.../sce_sys/param.sfo`) |
+
+**Compressed archives:** Kura also peeks inside `.zip` and `.rar` archives (RAR5) to find PlayStation games stored compressed. Read-only — no extraction. STORED (uncompressed) entries inside RARs get full metadata + cover; compressed entries surface as "RAR archive: contains foo.pkg, bar.iso" so you still see the file in your library and know what's in it.
+
+For compressed formats (`.cso`, `.ziso`, `.ecm`) Kura uses **partial decompression** — it decompresses only the few sectors needed to read the metadata, never the whole image. A 1.8 GB CSO scan takes the same time as a regular ISO.
 
 ---
 
-*Built by Nookie · PSX · PS2 · PSP · PSV · PS3 · PS4 · PS5 · all from one window*
+## Key Features
+
+### Accurate platform detection
+Kura reads PKG headers and PARAM.SFO/PARAM.JSON metadata directly. It distinguishes PS4 from PS5 from PSV using header magic bytes and the content-type field — not just the filename. Uncertain PKGs are badged `PS4?` or `?`; Kura never silently labels unknowns.
+
+### Game library
+- Live filtering by name, title ID, or filename
+- Category tabs: **GAME · PATCH · DLC · HOMEBREW · APP · CLASSIC · MINI · DEMO · THEME · OTHER**
+- Platform tabs: **PS1 · PS2 · PSP · PS3 · PS4 · PS5 · PSV**
+- Sort by title, size, region, firmware, version, type
+- Grid and table views
+- Duplicate detection by Content ID + version + region
+- Size calculation runs in the background — the library appears immediately, sizes fill in
+
+### Transfers
+- Copy or Move to any local folder or FTP destination
+- Folder-format transfers (PS3 JB dumps, PS5 game folders) use recursive FTP so the whole tree arrives intact
+- Layout presets for PS4/PS5: **etaHEN**, **ItemzFlow**, **Dump Runner**, **Porkfolio**, **Game Title**, **Game/PPSA**, **PPSA Only**, **Title ID**, **By Category**, **GoldHEN / CFW**, **Custom Rename**
+- Layout presets for PS3 webMAN: `GAMES/`, `GAMEZ/`, `GAMEI/`, `PS3ISO/`, `packages/`
+- Pre-flight space check across the destination, including all `.bin` companions for multi-track `.cue` sets
+
+### Console install
+- **etaHEN** (PS5) — direct install via FTP/HTTP endpoint
+- **RPI / VoidShell** (PS5) — JSON pkg list with retry tolerance
+- **WebMAN-MOD** (PS3) — `/install.ps3?` HTTP endpoint with progress polling
+- **Itemzflow** (PS5) — folder upload + register
+
+### Save data
+Kura recognises save data folders (`SAVEDATA/`, `pcsavedata/`, `sce_sys/savedata`) where they exist alongside game data, but does not currently transfer or sync save files between PC and console. Save-data management is on the roadmap, not shipped yet.
+
+### Privacy & offline
+Kura never phones home. The only network I/O is:
+- FTP/HTTP traffic to the consoles you tell it to talk to
+- Optional cover-art lookups from the public libretro thumbnail mirror (you can disable this in settings)
+- Optional GameDB downloads for PS1/PS2/PSP title lookups (one-time, cached locally)
+
+No telemetry, no analytics, no account.
+
+---
+
+## Troubleshooting
+
+**Kura doesn't see my games**
+Check `%APPDATA%\Kura\kura.log` — every scan attempt is logged with a `[ps12-detect]` or `[pkg-classify]` line explaining why a file was accepted, rejected, or skipped.
+
+**A game shows the wrong platform/badge**
+Click the (i) icon on the row to see the metadata. If the title ID prefix looks correct but the badge is wrong, post the log line in Discord.
+
+**Duplicate detection grouped two different games**
+Use the **Resolve Dupes** button in the header. Each duplicate group shows the conflicting fields side-by-side; you can keep the one you want, mark the other as not-a-duplicate, or delete it.
+
+**FTP transfers stall on PS5**
+The PS5 FTP daemon throttles if you hammer it. Kura adds a 350 ms inter-operation delay automatically. If you still see stalls, drop the concurrency in **Menu → Settings → Transfers**.
+
+**The library has hundreds of games I didn't expect**
+Check the source folder. Common causes: a developer machine with `node_modules`, a Go module cache, or a folder of screenshots named after game IDs. Kura skips most of these by default but custom layouts can slip through. The **Filter by name, ID, filename** box is your fastest triage tool.
+
+---
+
+## Where things live
+
+| What | Path |
+|---|---|
+| Library JSON | `%APPDATA%\Kura\library.json` |
+| Settings | `%APPDATA%\Kura\settings.json` |
+| Log file | `%APPDATA%\Kura\kura.log` |
+| Cover cache | `%APPDATA%\Kura\covers\` |
+| GameDB cache | `%APPDATA%\Kura\gamedb-*.json` |
+
+To uninstall: delete the `.exe` and the `%APPDATA%\Kura\` folder.
+
+---
+
+## Help & Community
+
+- **Discord** — top-right of the app for the invite link
+- **Bug reports** — paste your `kura.log` (only file paths and titles, no personal info)
+- **Feature requests** — Discord #suggestions
+
+Made with care by Nookie.
