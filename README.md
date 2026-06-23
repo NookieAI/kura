@@ -56,7 +56,7 @@ Open the dashboard from Kura (**Menu → Kura Dashboard**) or in any browser at 
 
 - Included with each [release](https://github.com/NookieAI/kura/releases/latest) as `kura-loader.elf`; the app's **Menu → Update kura.elf from GitHub** and the automatic setup keep it current.
 - Requires a jailbroken PS5 on compatible firmware with a payload loader (for example, etaHEN). Open the console from Kura, or let the automatic setup handle it.
-- A full walkthrough is available in the app under **Menu → Help & Guide → "Kura Loader ELF (PS5 Dashboard)"**.
+- A full walkthrough is available in the app under **Menu → Help & Guide → "Set up your PS5"**.
 
 PS5 console features are optional; the desktop application's scanning, organisation, and metadata features run on any Windows PC without them.
 
