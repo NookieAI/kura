@@ -4,7 +4,8 @@ Kura is a free Windows application that scans your drives, identifies every Play
 
 No installer. No login. No account. A portable `.exe`.
 
-##[Kura — unified PlayStation library]
+## Kura — unified PlayStation library
+
 <img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/ef6e9441-5f43-4111-84ce-8c9a8add723b" />
 
 
