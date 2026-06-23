@@ -4,6 +4,8 @@ Kura is a free Windows application that scans your drives, identifies every Play
 
 No installer. No login. No account. A portable `.exe`.
 
+![Kura — unified PlayStation library](docs/library.png)
+
 ## Download
 
 Download the latest `kura.exe` from the [Releases](https://github.com/NookieAI/kura/releases/latest) page and run it — no installation, no administrator rights, no Node.js.
@@ -47,6 +49,8 @@ A jailbreak toolset in a single payload, operated from the dashboard or the desk
 ### Dashboard
 
 Open the dashboard from Kura (**Menu → Kura Dashboard**) or in any browser at `http://<console-ip>:8535/`. It provides a live view of the console — temperatures and fan, memory and storage, processes, library, installs, cheats, patches, save manager, network, and logs — updated in real time.
+
+![Kura Loader dashboard](docs/dashboard.png)
 
 ### Requirements and setup
 
