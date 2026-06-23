@@ -51,8 +51,6 @@ A jailbreak toolset in a single payload, operated from the dashboard or the desk
 
 Open the dashboard from Kura (**Menu → Kura Dashboard**) or in any browser at `http://<console-ip>:8535/`. It provides a live view of the console — temperatures and fan, memory and storage, processes, library, installs, cheats, patches, save manager, network, and logs — updated in real time.
 
-![Kura Loader dashboard](docs/dashboard.png)
-
 ### Requirements and setup
 
 - Included with each [release](https://github.com/NookieAI/kura/releases/latest) as `kura-loader.elf`; the app's **Menu → Update kura.elf from GitHub** and the automatic setup keep it current.
