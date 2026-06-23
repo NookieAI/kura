@@ -20,24 +20,45 @@ Grab the latest **`kura.exe`** from the [Releases](https://github.com/NookieAI/k
 - **🔌 Direct console transfer.** Transfer over FTP straight to the console; install PKGs through the right endpoint for your firmware. (PS5 transfers respect the PS5 FTP daemon's throttling so they don't stall.)
 - **📦 Duplicate detection.** Groups the same game across drives / versions / regions (content ID + version + region) and shows side-by-side what differs.
 
-## Kura Loader — the PS5 payload
+## Kura Loader — the all-in-one PS5 payload
 
-**What it is.** Kura Loader is Kura's companion **PS5 homebrew payload**, shipped as **`kura-loader.elf`** and bundled with every release. It runs on a **jailbroken PS5** and is what unlocks Kura's PS5 console features. (It's a sibling project to the desktop app — the `.exe` and the `.elf` are released together.)
+**Kura Loader** is Kura's companion **PS5 homebrew payload**, shipped as **`kura-loader.elf`** and bundled with every release. It's a **single self-contained ELF** — one payload to load on your jailbroken PS5 that brings up a full **web dashboard** *and* a stack of the scene's best tools, with no extra downloads. The desktop app talks to it over your LAN to light the PS5 up like every other platform.
 
-**What it does.** Once loaded on the console, `kura-loader.elf` runs a lightweight on-console server that the Kura desktop app talks to over your LAN:
-- **Console dashboard** (web UI on port **8535**) — live temps/thermals, fan, network, storage, system health, save manager, trophies, avatars, crash logs, and more.
-- **Game discovery & real names** — reads the console's own app database so installed PS5 games show up with their **real titles** (not raw `CUSA…`/`PPSA…` IDs).
-- **File access & transfer** — an FTP/kfs service (port **2121**) so Kura can browse, transfer, and install directly to the console.
-- **Auto-discovery** — announces itself on the LAN (mDNS) so the app can find your console with one click.
+> **One-click (or zero-click) install:** connect a jailbroken PS5 that's missing it and Kura fetches, pushes, and launches `kura-loader.elf` for you automatically — or use **Menu → Set up my PS5** to do it on demand.
 
-**What it's for.** It's the bridge between the desktop app and your PS5. **Without it**, Kura still works great for scanning and organising local files — but it can't see *installed* PS5 games, resolve their real names, or install to the PS5. **With it**, the PS5 lights up like every other platform.
+### ⭐ ShadowMountPlus — play games straight from USB
 
-**How to get & use it.**
-- It's attached to each [release](https://github.com/NookieAI/kura/releases/latest) as `kura-loader.elf`, and the app's **Menu → Update kura.elf from GitHub** fetches the latest automatically.
-- Load it on a **jailbroken PS5** via your payload loader (e.g. etaHEN), then open the console from Kura.
-- Full step-by-step setup is in the app's **Menu → Help & Guide** → **"Kura Loader ELF (PS5 Dashboard)"** (start there for PS5).
+Kura Loader bundles and manages **[ShadowMountPlus](https://github.com/drakmor/shadowMountPlus)** by **Drakmor** — a game **mount engine** that lets your PS5 **run titles directly from external/USB or network storage**, without copying them into the internal SSD first. Mount a game and play it; unmount when you're done. It's the cleanest way to enjoy a big library on a console with limited internal space, and Kura keeps it **auto-updated** to the latest build for you (one click in the dashboard).
 
-**Requirements.** A jailbroken PS5 on compatible firmware with a payload loader. PS5 console features are optional — the rest of Kura needs none of this.
+### 🛠️ Everything else it includes
+
+A jailbreak toolbox in one payload, all driven from the dashboard or the desktop app:
+
+- **🎮 Install anything** — PKG install + upload, URL-push install, disc/folder installs, and tile auto-install. PS4 *and* PS5 packages.
+- **📚 Game library + app dumper** — reads the console's own database for real titles, and can **dump installed games** back out.
+- **🩹 Cheats & patches** — a built-in cheats engine (**1,500+** cheats) and **game patches** (370+), with auto-fetch.
+- **💾 Save manager** — backup/restore game saves (Garlic save-manager integration).
+- **🌡️ Fan control & thermals** — live CPU temp, custom fan curves, silent/balanced/aggressive presets.
+- **🖼️ Avatar maker** — set custom PSN profile avatars.
+- **🌐 Network tools** — LAN auto-discovery (mDNS), SMB shares, nanoDNS, network diagnostics.
+- **🔌 Plugins + klog** — load plugins, and tap/stream the live kernel log for debugging.
+- **🩺 Health & recovery** — process monitor, crash logs, safe-mode, and a built-in `elfldr` so Kura can re-launch it if it ever stops.
+
+### 🖥️ The dashboard (web UI on port 8535)
+
+Open it from Kura (**Menu → Kura Dashboard**) or any browser at `http://<console-ip>:8535/`: a clean, live console — temps & fan, memory/storage, processes, your library, installs, cheats, patches, save manager, network, logs, and more, all updating in real time.
+
+### Get & use it
+
+- Attached to each [release](https://github.com/NookieAI/kura/releases/latest) as `kura-loader.elf`; the app's **Menu → Update kura.elf from GitHub** and the auto-setup keep it current.
+- **Requires a jailbroken PS5** on compatible firmware with a payload loader (e.g. etaHEN) — then just open the console from Kura (or let auto-setup do it).
+- Full walkthrough: in-app **Menu → Help & Guide** → *"Kura Loader ELF (PS5 Dashboard)"*.
+
+*PS5 console features are optional — the desktop app's scanning, organising and metadata work on any Windows PC without it.*
+
+### Credits
+
+Kura Loader stands on the shoulders of the PS5 homebrew scene — most notably **[ShadowMountPlus](https://github.com/drakmor/shadowMountPlus)** by **Drakmor**, plus the wider ps5-payload-dev ecosystem. Huge thanks to everyone who builds and shares these tools. 🙏
 
 ## Supported formats
 
