@@ -1,15 +1,15 @@
 # Kura
 
-Kura is a free Windows application that scans your drives, identifies every PlayStation game you own, and helps you organise, transfer, and install them — across PS1, PS2, PSP, PS3, PS4, PS5, and PS Vita, in a single library.
+Kura is a free application that scans your drives, identifies every PlayStation game you own, and helps you organise, transfer, and install them — across PS1, PS2, PSP, PS3, PS4, PS5, and PS Vita, in a single library.
 
-No installer. No login. No account. A portable `.exe`.
+No installer. No login. No account. Native builds for Windows, macOS (Apple Silicon + Intel), and Linux.
 
 <img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/ef6e9441-5f43-4111-84ce-8c9a8add723b" />
 
 
 ## Download
 
-Download the latest `kura.exe` from the [Releases](https://github.com/NookieAI/kura/releases/latest) page and run it — no installation, no administrator rights, no Node.js.
+Download the latest build for your platform from the [Releases](https://github.com/NookieAI/kura/releases/latest) page and run it — no installation, no administrator rights, no Node.js. Windows: `kura.exe` · macOS: `Kura-x.x.x-arm64.dmg` / `Kura-x.x.x-x64.dmg` · Linux: `Kura-x.x.x.AppImage`.
 
 Each release also includes `kura-loader.elf`, the Kura Loader payload for PS5 (see [Kura Loader](#kura-loader) below).
 
@@ -53,11 +53,11 @@ Open the dashboard from Kura (**Menu → Kura Dashboard**) or in any browser at 
 
 ### Requirements and setup
 
-- Included with each [release](https://github.com/NookieAI/kura/releases/latest) as `kura-loader.elf`; the app's **Menu → Update kura.elf from GitHub** and the automatic setup keep it current.
+- Included with each [release](https://github.com/NookieAI/kura/releases/latest) as `kura-loader.elf`; the automatic setup in the app keeps it current.
 - Requires a jailbroken PS5 on compatible firmware with a payload loader (for example, etaHEN). Open the console from Kura, or let the automatic setup handle it.
 - A full walkthrough is available in the app under **Menu → Help & Guide → "Set up your PS5"**.
 
-PS5 console features are optional; the desktop application's scanning, organisation, and metadata features run on any Windows PC without them.
+PS5 console features are optional; the desktop application's scanning, organisation, and metadata features run without them.
 
 ### Credits
 
@@ -73,7 +73,7 @@ Core operation is fully offline. The only optional online requests are cover-art
 
 ## Platform
 
-Windows, distributed as a portable `.exe`. macOS and Linux are not officially supported (Wine may work but is untested).
+Windows (`.exe`), macOS Apple Silicon (`arm64.dmg`), macOS Intel (`x64.dmg`), and Linux (`.AppImage`). All builds are portable — no installation required.
 
 ## Links
 
