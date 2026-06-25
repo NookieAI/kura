@@ -75,6 +75,18 @@ Core operation is fully offline. The only optional online requests are cover-art
 
 Windows (`.exe`), macOS Apple Silicon (`arm64.dmg`), macOS Intel (`x64.dmg`), and Linux (`.AppImage`). All builds are portable — no installation required.
 
+### macOS — first-launch note
+
+Kura is not yet signed with an Apple Developer certificate. On macOS 13+ you may see **"Kura is damaged and can't be opened"** when you first try to launch it. This is Gatekeeper blocking an unsigned download — the app is not actually damaged.
+
+**Fix:** open Terminal and run:
+
+```
+xattr -cr /Applications/Kura.app
+```
+
+Then launch Kura normally. You only need to do this once.
+
 ## Links
 
 - In-app Help & Guide (**Menu → Help & Guide**) — full walkthrough, layouts, console setup, and troubleshooting.
