@@ -2,6 +2,17 @@
 
 All notable changes to the Kura desktop app. Newest first.
 
+## 1.2.0 — queue control + smarter cleanup
+
+- **Transfer Queue panel.** See transfers interrupted by a crash or power loss, resume them on demand, or clear a stuck queue (a new Console Tools screen + command).
+- **Console Cleanup: multi-select + sync report.** Tick several safe-to-remove games and delete them in one guarded batch, plus a banner summarising library-vs-console sync (on-console-not-local / local-not-on-console / safe-to-remove).
+
+## 1.1.1 — Kura-branded payload + a steadier console link
+
+- **Fully Kura-branded console payload.** Every on-console popup now reads *Kura Loader* instead of leaking bundled-component names (rebuilt + verified in the binary).
+- **No more 60-second freeze when the console is busy.** Feature-sync steps back cleanly in a few seconds if the PS5 payload is momentarily unresponsive.
+- **Steadier under the hood.** Version metadata stays in lockstep; full test suite green (now incl. a runtime boot smoke test).
+
 ## 1.1.1 — Kura-branded payload + a steadier console link
 
 - **Fully Kura-branded console payload.** Every on-console popup now reads *Kura Loader* instead of leaking bundled-component names. Rebuilt + bundled, verified in the binary.
