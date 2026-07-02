@@ -2,6 +2,12 @@
 
 All notable changes to the Kura desktop app. Newest first.
 
+## 1.1.1 — Kura-branded payload + a steadier console link
+
+- **Fully Kura-branded console payload.** Every on-console popup now reads *Kura Loader* instead of leaking bundled-component names. Rebuilt + bundled, verified in the binary.
+- **No more 60-second freeze when the console is busy.** Feature-sync now steps back cleanly in a few seconds if the PS5 payload is momentarily unresponsive, instead of hanging the app.
+- **Steadier under the hood.** Version/build metadata stays in lockstep across every file; the full test suite is green top-to-bottom.
+
 ## 1.1.0 — seven new tools + reliability
 
 - **Back up all saves in one click.** The Save Manager gets a *Back up all* button — pick one folder and every visible save is downloaded as its own .zip (sealed saves skipped), with a live progress bar.
