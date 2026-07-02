@@ -4,7 +4,7 @@ Kura is a free application that scans your drives, identifies every PlayStation 
 
 No installer. No login. No account. Native builds for Windows, macOS (Apple Silicon + Intel), and Linux.
 
-<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/ef6e9441-5f43-4111-84ce-8c9a8add723b" />
+<img width="1920" height="1032" alt="Kura — one library for every PlayStation" src="https://raw.githubusercontent.com/NookieAI/kura/main/docs/library.png" />
 
 
 ## Download
