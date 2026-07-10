@@ -2,6 +2,13 @@
 
 All notable changes to the Kura desktop app. Newest first.
 
+## 1.6.2 — One-click connect
+
+- **Click the status pill to connect.** The topbar console indicator now finds and connects your PlayStation for you — it uses the console IP already in your transfer destination (checking it answers first), then mDNS, then an active network scan, connects the Kura Loader, installs the loader payload if needed, and turns green. No IP typing.
+- **It reflects a live connection automatically.** If your console IP is already set for transfers, the pill connects and turns green on its own instead of showing *No console* while the dashboard is open.
+- **You get notified** when a console is found and when the Kura Loader connects.
+- Desktop-app fix only — the bundled PS5 payload is unchanged (revision 20r68).
+
 ## 1.6.1 — Always-visible console status
 
 - **The Kura Loader connection status is always shown now.** A status pill sits permanently in the topbar next to **Menu**, so you can always tell whether a console is connected. It reads **No console** (grey), **Connecting…** (amber), **Console OK** (green), or **Degraded** / **Down** / **Boot loop** when something needs attention — click it to open the dashboard, or to set a console IP when none is set. It previously stayed hidden until an IP was already known, so a fresh install showed nothing at all. Desktop-app fix only — the bundled PS5 payload is unchanged (revision 20r68).
