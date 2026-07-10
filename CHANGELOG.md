@@ -2,6 +2,10 @@
 
 All notable changes to the Kura desktop app. Newest first.
 
+## 1.6.1 — Always-visible console status
+
+- **The Kura Loader connection status is always shown now.** A status pill sits permanently in the topbar next to **Menu**, so you can always tell whether a console is connected. It reads **No console** (grey), **Connecting…** (amber), **Console OK** (green), or **Degraded** / **Down** / **Boot loop** when something needs attention — click it to open the dashboard, or to set a console IP when none is set. It previously stayed hidden until an IP was already known, so a fresh install showed nothing at all. Desktop-app fix only — the bundled PS5 payload is unchanged (revision 20r68).
+
 ## 1.6.0 — Total metadata & a new look
 
 - **Complete metadata extraction.** Every field Kura reads from a game file is kept, not a handful. The info panel shows required firmware, SDK and master/disc version, build date, parental level, supported languages, region, and the on-disk, install, download and uncompressed sizes; the full SFO and `param.json` are retained so nothing is dropped.
