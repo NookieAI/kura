@@ -35,9 +35,10 @@ Each release also includes `kura-loader.elf`, the Kura Loader payload for PS5 (s
 
 
 
-- **Reads inside the files.** Kura parses the PKG header, the ISO9660 directory, the SFO metadata, the ZIP central directory, and the CSO sector index to extract the real title, title ID, version, content ID, region, firmware requirement, and cover art. `FF7-REMAKE-PS4-FIXED-FIXED2.pkg` is identified as *Final Fantasy VII Remake*.
+- **Reads inside the files.** Kura parses the PKG header, the ISO9660 directory, the SFO metadata, the ZIP central directory, and the CSO sector index to extract the real title, title ID, versions, content ID, region, required firmware, SDK version, parental level, sizes, and cover art — and keeps the complete SFO / `param.json` so nothing is dropped. `FF7-REMAKE-PS4-FIXED-FIXED2.pkg` is identified as *Final Fantasy VII Remake*.
 
 - **Every PlayStation in one library.** PS1 disc images, PS2 ECM dumps, PSP UMDs and CSOs, PS3 JB folders and PKGs, PS4 fpkg/exFAT backups, PS5 folder installs, and PS Vita VPKs — the same library, filters, and workflow throughout.
+- **Library insights.** Built-in Stats views chart your collection — a Genome Map of connected franchises, Completion Constellations that reveal which numbered sequels you're missing, and health, storage, and curator overviews.
 
 - **Fast scanning.** Drives scan in parallel, and compressed formats use partial decompression (reading only the sectors needed for metadata), so a 1.8 GB CSO scans about as quickly as a plain ISO.
 
