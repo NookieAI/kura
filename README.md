@@ -1,4 +1,5 @@
 # Kura
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/c968fd95-c186-406b-ab30-50a64275a304" />
 
 
 
@@ -13,7 +14,6 @@ No installer. No login. No account. Native builds for Windows, macOS (Apple Sili
 
 
 
-<img width="1920" height="1032" alt="Kura — one library for every PlayStation" src="https://raw.githubusercontent.com/NookieAI/kura/main/docs/library.png" />
 
 
 
@@ -53,6 +53,7 @@ Each release also includes `kura-loader.elf`, the Kura Loader payload for PS5 (s
 
 
 ## Kura Loader
+<img width="1920" height="913" alt="image" src="https://github.com/user-attachments/assets/88bd548d-9560-4f5c-b3be-dfa14a4fbb5d" />
 
 
 
