@@ -2,6 +2,53 @@
 
 All notable changes to the Kura desktop app. Newest first.
 
+## 1.6.48 — 2026-08-19
+
+**Kura** is a free application that scans your drives, identifies every PlayStation game you own, and helps you organise, transfer, and install them — across **PS1, PS2, PSP, PS3, PS4, PS5, and PS Vita**, in a single library. It reads *inside* each file for the real title, cover art, and metadata (not the filename), finds duplicates, organises for any console layout, and installs straight to your console.
+
+No installer. No login. No account. Native builds for **Windows, macOS (Apple Silicon + Intel), and Linux** — plus the `kura-loader.elf` PS5 payload and the `kura-loader-ps4.elf` PS4 payload.
+
+
+![Kura — one library for every PlayStation, current view](https://github.com/NookieAI/kura/releases/download/v1.6.48/kura-screenshot.png)
+
+## What's new in 1.6.48
+
+A focused reliability release from a top-to-bottom audit — 20 verified fixes. No new features, just fewer ways for things to go wrong, with a clear priority on **protecting your game files**.
+
+### Protecting your library
+- A transfer can no longer replace a good game with a **truncated** one — an FTP download now verifies it received the whole file before swapping it in, and the file it replaces goes to the **Recycle Bin** (recoverable) rather than being hard-deleted.
+- A **folder move no longer deletes the source after a partial copy** — it confirms the destination holds the expected data first; if the copy fell short, your original is kept.
+- Extracting a game from a `.zip`/`.rar` is now **atomic** — an interrupted extract can't leave a truncated file under a real `.pkg` name.
+
+### Library accuracy
+- **PS5 scanning over FTP works again** (a broken internal call meant those games came back with no title and no cover).
+- **Distinct DLCs are no longer flagged as duplicates** — and were being pre-selected for deletion in *Resolve Duplicates*. Duplicate-matching now tells DLCs apart by pack ID even when the console mislabels their category.
+- A repeat "scan installed" can no longer leave the library looking empty.
+
+### Doesn't hang or crash on bad input
+- A malformed or **zip-bomb** file can no longer hang or exhaust memory during a scan — SFO parsing and archive extraction are now bounded.
+- The PKG server no longer leaks a file handle when the console aborts a transfer.
+
+### Transfers & UI
+- **FTP transfer progress bars animate again** instead of sitting frozen.
+- Pressing **Escape** over the transfer dialog no longer wipes your game selection.
+- The console-internet banner no longer shows green "online" while the console is actually air-gapped.
+
+### Console loader (PS5 20r161) & security
+- **Hardened the jailbreak-payload endpoints** — a truncated or crafted ELF on the `/elfldr` and `/hbldr` paths could crash the loader; those paths now validate the ELF first, and an argument-parsing bug that could corrupt memory is fixed.
+- Removed a stray outbound network connection in the loader's FTP server; fixed a small memory leak and a `param.json` parsing edge case.
+- Closed a command-injection in the disk-free-space check (non-Windows builds).
+
+### Polish
+- The firewall-error message no longer points at a button that was removed.
+
+---
+*Bundles Kura Loader PS5 20r161 and PS4 20r103. Made by Nookie.*
+
+## 1.6.3 – 1.6.47
+
+Incremental auto-versioned builds between the 1.6.2 changelog entry and the current 1.6.48 release (connection reliability, loader/mount handling, UI and scan refinements). Per-version notes were not published individually; see the [commit history](https://github.com/NookieAI/kura/commits/master) for detail.
+
 ## 1.6.2 — One-click connect
 
 - **Click the status pill to connect.** The topbar console indicator now finds and connects your PlayStation for you — it uses the console IP already in your transfer destination (checking it answers first), then mDNS, then an active network scan, connects the Kura Loader, installs the loader payload if needed, and turns green. No IP typing.
